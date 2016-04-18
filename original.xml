@@ -1,0 +1,30 @@
+<simulationDefinition>
+  <transferrer class="tmp" />
+  <algorithms />
+  <parameters>
+  </parameters>
+  <numericalModel>
+    <needles>
+      <needle index="1" class="rfa-cylinder-1" file="library:rfa-cylinder-1">
+        <parameters>
+          <parameter name="NEEDLE_TIP_LOCATION" value="(0.0, 14.0, 0.0)" type="array(float)" />
+          <parameter name="NEEDLE_ENTRY_LOCATION" value="(1.0, 14.0, 0.0)" type="array(float)" />
+        </parameters>
+      </needle>
+      <needle index="2" class="rfa-cylinder-1" file="library:rfa-cylinder-1">
+        <parameters>
+          <parameter name="NEEDLE_TIP_LOCATION" value="(0.0, 0.0, 0.0)" type="array(float)" />
+          <parameter name="NEEDLE_ENTRY_LOCATION" value="(1.0, 0.0, 0.0)" type="array(float)" />
+        </parameters>
+      </needle>
+    </needles>
+    <regions>
+      <region id="organ-1" name="organ" format="surface" input="input/organ.stl" groups='["organs", "boundaries"]' />
+      <region id="tumour-1" name="tumour" format="surface" input="input/tumour.stl" groups='["tumours"]' />
+      <region id="vessel-1" name="vessel-straight" format="surface" input="input/vessel1.stl" groups='["vessels"]' />
+      <region id="vessel-2" name="vessel-round" format="surface" input="input/vessel2.stl" groups='["vessels"]' />
+    </regions>
+    <definition family="fenics">
+    </definition>
+  </numericalModel>
+</simulationDefinition>
