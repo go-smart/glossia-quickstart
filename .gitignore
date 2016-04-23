@@ -1,1 +1,5 @@
-output
+/output
+/run.sh
+/setup.sh
+/docker-compose.yml
+/settings/
