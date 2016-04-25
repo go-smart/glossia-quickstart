@@ -2,9 +2,30 @@
   <transferrer class="tmp" />
   <algorithms />
   <parameters>
-    <parameter name="RESOLUTION_FIELD_NEAR" value="0.3" type="float" />
-    <parameter name="RESOLUTION_FIELD_FAR" value="0.3" type="float" />
-    <parameter name="RESOLUTION_FIELD_ZONE" value="0.3" type="float" />
+    <parameter name="RESOLUTION_FIELD_NEAR" value="3" type="float" />
+    <parameter name="RESOLUTION_FIELD_FAR" value="3" type="float" />
+    <parameter name="RESOLUTION_FIELD_ZONE" value="3" type="float" />
+    <parameter name="CONSTANT_IRE_NEEDLEPAIR_VOLTAGE" value="[[1, 2, 1000]]" type="array(array(string, string, float))" />
+    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_TISSUE" value="0.32" type="float" />
+    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_TUMOUR" value="0.7" type="float" />
+    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_BACKGROUND" value="0.08" type="float" />
+    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_VESSELS" value="1.5" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_UPPER_TISSUE" value="0.32" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_UPPER_TUMOUR" value="0.7" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_UPPER_BACKGROUND" value="0.08" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_UPPER_VESSELS" value="1.5" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_LOWER_TISSUE" value="0.08" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_LOWER_TUMOUR" value="0.2" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_LOWER_BACKGROUND" value="0.02" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_LOWER_VESSELS" value="0.7" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_THRESHOLD_UPPER_TISSUE" value="70000" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_THRESHOLD_UPPER_TUMOUR" value="80000" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_THRESHOLD_UPPER_BACKGROUND" value="40000" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_THRESHOLD_UPPER_VESSELS" value="45000" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_THRESHOLD_LOWER_TISSUE" value="35000" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_THRESHOLD_LOWER_TUMOUR" value="40000" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_THRESHOLD_LOWER_BACKGROUND" value="10000" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_THRESHOLD_LOWER_VESSELS" value="10000" type="float" />
   </parameters>
   <numericalModel>
     <needles>
