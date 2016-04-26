@@ -54,4 +54,4 @@ The results may be retrieved, as usual for Glossia, with the command,
         glot results ${SIMULATIONID}
 
 If successful, this will output a TGZ bundle of simulation results in the local directory. For more diagnostic
-data, check the `glot documentation <https://go-smart.github.io/glot>` for ``glot diagnostic``.
+data, check the `glot documentation <https://go-smart.github.io/glot>`_ for ``glot diagnostic``.
