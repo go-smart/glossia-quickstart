@@ -38,3 +38,11 @@ for name, (group, suffix) in tissues_utility.items():
         })
 
 max_restarts = 10
+
+needles = {}
+needle_prefix = 'needle-'
+for key, region in R.items():
+    if region.am('needles'):
+        if key.startswith(needle_prefix):
+            key = key[len(needle_prefix):]
+        needles[int(key)] = region.idx

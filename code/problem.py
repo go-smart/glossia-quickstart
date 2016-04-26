@@ -136,7 +136,8 @@ class IREProblem:
     def save_lesion(self):
         final_filename = "results/%s-max_e%06d.vtu" % (input_mesh, self.max_e_count)
 
-        destination = "results/lesion.vtp"
+        shutil.copyfile(final_filename, "../lesion_volume.vtu")
+        destination = "../lesion_surface.vtp"
         vtk_tools.save_lesion(destination, final_filename, "max_E", (80, None))
 
         print("Output file to %s?" % destination, os.path.exists(destination))
@@ -180,8 +181,8 @@ class IREProblem:
 
             # Define the Dirichlet boundary conditions on the active needles
             uV = d.Constant(voltage)
-            term1_bc = d.DirichletBC(self.V, uV, self.patches, anode)
-            term2_bc = d.DirichletBC(self.V, u0, self.patches, cathode)
+            term1_bc = d.DirichletBC(self.V, uV, self.patches, v.needles[anode])
+            term2_bc = d.DirichletBC(self.V, u0, self.patches, v.needles[cathode])
 
             e = d.Function(self.V)
             e.vector()[:] = max_e.vector()

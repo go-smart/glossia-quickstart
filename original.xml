@@ -2,14 +2,18 @@
   <transferrer class="tmp" />
   <algorithms />
   <parameters>
+    <parameter name="SIMULATION_SCALING" value="0.001" type="float" />
     <parameter name="RESOLUTION_FIELD_NEAR" value="3" type="float" />
     <parameter name="RESOLUTION_FIELD_FAR" value="3" type="float" />
     <parameter name="RESOLUTION_FIELD_ZONE" value="3" type="float" />
-    <parameter name="CONSTANT_IRE_NEEDLEPAIR_VOLTAGE" value="[[1, 2, 1000]]" type="array(array(string, string, float))" />
-    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_TISSUE" value="0.32" type="float" />
-    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_TUMOUR" value="0.7" type="float" />
-    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_BACKGROUND" value="0.08" type="float" />
-    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_VESSELS" value="1.5" type="float" />
+    <parameter name="RESOLUTION_FIELD_NEEDLE_ZONE" value="2" type="float" />
+    <parameter name="CONSTANT_IRE_NEEDLEPAIR_VOLTAGE" value="[[1, 2, 3000], [1, 3, 2400], [2, 3, 3100]]" type="array(array(int, int, float))" />
+    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_NEEDLE" value="1.0" type="float" />
+    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_TISSUE" value="1.0" type="float" />
+    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_TUMOUR" value="1.0" type="float" />
+    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_BACKGROUND" value="1.0" type="float" />
+    <parameter name="CONSTANT_IRE_RELATIVE_PERMITTIVITY_VESSELS" value="1.0" type="float" />
+    <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_NEEDLE" value="1e4" type="float" />
     <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_UPPER_TISSUE" value="0.32" type="float" />
     <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_UPPER_TUMOUR" value="0.7" type="float" />
     <parameter name="CONSTANT_IRE_ELECTRIC_CONDUCTIVITY_UPPER_BACKGROUND" value="0.08" type="float" />
@@ -29,16 +33,25 @@
   </parameters>
   <numericalModel>
     <needles>
-      <needle index="1" class="rfa-cylinder-1" file="library:rfa-cylinder-1">
+      <needle index="1" class="boundary" file="library:rfa-cylinder-1">
         <parameters>
           <parameter name="NEEDLE_TIP_LOCATION" value="[0.0, 14.0, 0.0]" type="array(float)" />
           <parameter name="NEEDLE_ENTRY_LOCATION" value="[1.0, 14.0, 0.0]" type="array(float)" />
+          <parameter name="NEEDLE_ACTIVE_LENGTH" value="20.0" type="array(float)" />
         </parameters>
       </needle>
-      <needle index="2" class="rfa-cylinder-1" file="library:rfa-cylinder-1">
+      <needle index="2" class="boundary" file="library:rfa-cylinder-1">
         <parameters>
-          <parameter name="NEEDLE_TIP_LOCATION" value="(0.0, 0.0, 0.0)" type="array(float)" />
-          <parameter name="NEEDLE_ENTRY_LOCATION" value="(1.0, 0.0, 0.0)" type="array(float)" />
+          <parameter name="NEEDLE_TIP_LOCATION" value="[0.0, 0.0, 0.0]" type="array(float)" />
+          <parameter name="NEEDLE_ENTRY_LOCATION" value="[1.0, 0.0, 0.0]" type="array(float)" />
+          <parameter name="NEEDLE_ACTIVE_LENGTH" value="20.0" type="array(float)" />
+        </parameters>
+      </needle>
+      <needle index="3" class="boundary" file="library:rfa-cylinder-1">
+        <parameters>
+          <parameter name="NEEDLE_TIP_LOCATION" value="[0.0, 7.0, 10.0]" type="array(float)" />
+          <parameter name="NEEDLE_ENTRY_LOCATION" value="[1.0, 7.0, 10.0]" type="array(float)" />
+          <parameter name="NEEDLE_ACTIVE_LENGTH" value="20.0" type="array(float)" />
         </parameters>
       </needle>
     </needles>

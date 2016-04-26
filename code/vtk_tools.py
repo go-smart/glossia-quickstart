@@ -16,7 +16,7 @@ def save_lesion(output_file, input_file, field, limits):
     else:
         threshold.ThresholdBetween(*limits)
 
-    threshold.SetInputArrayToProcess(0, 0, 0, v.vtkDataObject.FIELD_ASSOCIATION_CELLS, field)
+    threshold.SetInputArrayToProcess(0, 0, 0, v.vtkDataObject.FIELD_ASSOCIATION_POINTS, field)
     threshold.Update()
 
     extract_surface = v.vtkDataSetSurfaceFilter()
