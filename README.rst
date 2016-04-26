@@ -16,12 +16,14 @@ h3. Running without Glossia
 
 - Clone this repository, containing toy surfaces and a basic FEniCS solver
 - Run
+
     .. code-block::
     
         glot setup . code/*
         
   This prepares the directory with the necessary tools for running a Glossia container offline.
 - Run
+
     .. code-block::
     
         sudo ./setup.sh
@@ -33,6 +35,7 @@ appear in ``output/run/``. The code outputs most run-time numerics into the ``re
 h3. Running with local Glossia
 
 Once you have <https://github.com/go-smart/glossia-server-side/> up and running, from the previous layout, run
+
     .. code-block::
 
         glot launch -i input/tumour.stl -i input/vessel1.stl -i input/vessel2.stl -i input/organ.stl --tmp-directory ${GLOSSIA_SERVER_SIDE_LOCATION}/transferrer original.xml code/*
@@ -42,6 +45,7 @@ This is actually a similar command to the launch above, but as ``glot`` does not
 the tmp directory is given to allow exchange of files without a Glossia-side file server.
 
 The results may be retrieved, as usual for Glossia, with the command,
+
     .. code-block::
 
         glot results ${SIMULATIONID}
