@@ -6,13 +6,15 @@ Requirements
 
 - docker
 - Python3 (via pip3)
+
     - glot
     - glossia.comparator
 
 Instructions
 ------------
 
-h3. Running without Glossia
+Running without Glossia
+~~~~~~~~~~~~~~~~~~~~~~~
 
 - Clone this repository, containing toy surfaces and a basic FEniCS solver
 - Run
@@ -32,7 +34,8 @@ h3. Running without Glossia
 This should download the necessary image from DockerHub and execute the simulation in the container. Output should
 appear in ``output/run/``. The code outputs most run-time numerics into the ``results/`` subdirectory.
 
-h3. Running with local Glossia
+Running with local Glossia
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once you have <https://github.com/go-smart/glossia-server-side/> up and running, from the previous layout, run
 
